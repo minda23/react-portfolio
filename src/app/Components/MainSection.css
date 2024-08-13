@@ -1,0 +1,47 @@
+.text_introduction {
+    gap: 1rem;
+    margin-top: 9rem;
+    margin-bottom: 13rem;
+    z-index: 18;
+    margin-left: 2rem;
+
+
+
+}
+
+.text_introduction h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.text_introduction h2 {
+    font-size: 2.1rem;
+    margin-bottom: 3rem;
+}
+
+.text_introduction p {
+    font-size: 1.2rem;
+
+}
+
+.icons {
+    margin-top: 1.1rem;
+    text-align: left;
+    position: relative;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.icons i {
+    opacity: 1;
+    font-size: 3rem;
+    color: #0096C7;
+    margin: 0.5rem;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.icons i:hover {
+    transform: scale(1.2);
+
+}
