@@ -7,16 +7,30 @@ import { useState, useEffect } from 'react';
 const MainSection = () => {
     const fullTitle = "JUNIOR FRONTEND DEVELOPER & CODER"
     const [title, setTitle] = useState(""); // counter je vlastnosť čo je nula, setCounter je funkcia na zmenu toho countera
-    const [counter, setCounter] = useState(0);
-    useEffect(() => setTitle(title + " " + fullTitle[counter]), [counter])// fulltitle je premmenna z riadka 8
+    const [counter, setCounter] = useState();
+    const [time, setTime] = useState(0);
+
+
+
+    // fulltitle je premmenna z riadka 8
     // set title je prvy parameter counter je druhy parameter a ten useefect vlastne vola že ked sa niečo zmeni na 1 alebo 2 tak bude volat
     // stale ako sa meni ten counter sa vola ta funkcia useEffect , može tam byť aj counter 2  a tiež sa bude volat useEffect
     // čo sa stane že klikneme na ten gombik, tak vlastne sa cez ten set counter
     // aktualizuje useStae{0} na useState{1}
+    useEffect(() => setTitle(title + fullTitle[counter]), [counter])
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setTime(prevTime => prevTime + 1);
+        }, 1000);
+
+        return () => {
+            clearInterval(timer);
+        };
+    }, []);
+
+
     return (
         <div id="Main">
-            <button onClick={() => setCounter(counter + 1)}>Klikaj</button>
-            {counter}
             <div className="Main">
                 <div className="text_introduction" id="text_introduction">
                     <h1>Lukáš Minda</h1>
